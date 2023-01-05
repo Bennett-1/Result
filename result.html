@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="css/result.css">
+    <!-- CSS FOR SPINNER FOR INPUT TYPE NUMBER -->
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>    
+</head>
+<body>
+    <img src="images/logo.jpeg" class="logo">
+    <div class="container">
+        <header>Result</header>
+        <form method="POST">
+            <div class="form first">
+                <div class="details company">
+                    <span class="title">Name : Shivangi Goyal</span>
+                    <span class="title">Enrollment No : E21CSEU0587</span>
+                    <span class="title">Odd Semester AY 22-23</span>
+                    
+                    <div class="fields">
+                        <div class="input-fields">
+                            <label>Probability And statistics (CSET204)</label>
+                            <input type="number" placeholder="B+" readonly>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Data Structure Using C++ (CSET202)</label>
+                            <input type="text" placeholder="A+" readonly>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>DBMS (CSET201)</label>
+                            <input type="number" placeholder="B" readonly>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Data Analysis Using Python (CSET214)</label>
+                            <input type="number" placeholder="A+" readonly>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Software Engineering (CSET205)</label>
+                            <input type="number" placeholder="B"  readonly>
+                        </div>
+
+                        <div class="input-fields up">
+                            <label>Microprocessors (CSET203)</label>
+                            <input type="text" placeholder="A+" readonly>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>SGPA</label>
+                            <input type="text" placeholder="8.77" readonly>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script>
+    
+    var submit = document.getElementById("genrate");
+    var output = document.getElementById("output1");
+
+submit.addEventListener("click", () => {
+    var date1 = new Date(document.getElementById("date-1").value);
+    var date2 = new Date(document.getElementById("date-2").value);
+
+if (date1.getTime() && date2.getTime()) {
+    var timeDifference = date2.getTime() - date1.getTime();
+    var dayDifference = Math.abs(timeDifference / (1000 * 3600 * 24));
+    document.getElementById('output1').value = dayDifference; 
+}
+else {
+    var x = -1;
+    document.getElementById('output1').value = x;
+}
+});
+
+</script>
+</body>
+</html>
